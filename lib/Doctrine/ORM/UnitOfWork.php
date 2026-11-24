@@ -2637,7 +2637,8 @@ class UnitOfWork implements PropertyChangedListener
                         $class->reflFields[$field]->setValue($entity, null);
                         $this->originalEntityData[$oid][$field] = null;
 
-                        continue;
+                        // inside a switch, "continue" has always meant "break" (PHP 7.3 warns about it); same behaviour, no warning
+                        break;
                     }
 
                     if ( ! isset($hints['fetchMode'][$class->name][$field])) {

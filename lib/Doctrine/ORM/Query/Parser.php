@@ -528,7 +528,8 @@ class Parser
      */
     private function isMathOperator($token)
     {
-        return in_array($token['type'], array(Lexer::T_PLUS, Lexer::T_MINUS, Lexer::T_DIVIDE, Lexer::T_MULTIPLY));
+        // PHP 7.4: a null token (end of input) is not an array
+        return $token !== null && in_array($token['type'], array(Lexer::T_PLUS, Lexer::T_MINUS, Lexer::T_DIVIDE, Lexer::T_MULTIPLY));
     }
 
     /**
@@ -1431,7 +1432,7 @@ class Parser
         // We need to check if we are in a IdentificationVariable or SingleValuedPathExpression
         $glimpse = $this->lexer->glimpse();
 
-        if ($glimpse['type'] === Lexer::T_DOT) {
+        if ($glimpse !== null && $glimpse['type'] === Lexer::T_DOT) {
             return $this->SingleValuedPathExpression();
         }
 
@@ -2763,7 +2764,7 @@ class Parser
             default:
                 $peek = $this->lexer->glimpse();
 
-                if ($peek['value'] == '(') {
+                if ($peek !== null && $peek['value'] == '(') {
                     if ($this->isAggregateFunction($this->lexer->lookahead['type'])) {
                         return $this->AggregateExpression();
                     }
