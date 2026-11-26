@@ -37,7 +37,7 @@ jobs:
       - name: install test tools
         run: |
           rm -f composer.lock
-          composer config audit.block-insecure false
+          composer config audit.block-insecure false 2>/dev/null || true  # Composer 2.2(PHP 7.1)には、この設定も差し止めも無い
           :
           composer require --dev --no-interaction --no-progress "phpunit/phpunit:^5.7" "symfony/yaml:~2.7" "doctrine/common:2.5.3" "doctrine/dbal:2.5.13" "doctrine/collections:1.3.0" "doctrine/cache:1.5.4" "doctrine/annotations:1.2.7" "doctrine/inflector:1.1.0" "doctrine/lexer:1.0.1" "symfony/console:2.7.51"
       - name: tests with this fork
