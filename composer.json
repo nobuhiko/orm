@@ -1,5 +1,5 @@
 {
-    "name": "nobuhiko/orm",
+    "name": "umiushi-lab/orm",
     "type": "library",
     "description": "Doctrine ORM 2.4.8 running clean on PHP 7.4, for EC-CUBE 3.0.x",
     "keywords": [
@@ -46,6 +46,6 @@
         "doctrine/orm": "2.4.8"
     },
     "support": {
-        "issues": "https://github.com/nobuhiko/orm/issues"
+        "issues": "https://github.com/umiushi-lab/orm/issues"
     }
 }

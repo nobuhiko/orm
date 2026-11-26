@@ -14,7 +14,7 @@ EC-CUBE 3.0.18 requires `doctrine/orm` `<2.5`. Doctrine ORM 2.4 was written befo
 Requires Composer 2. In the shop's project root:
 
 ```
-composer require nobuhiko/orm:^2.4.8
+composer require umiushi-lab/orm:^2.4.8
 ```
 
 The package `replace`s `doctrine/orm` 2.4.8, so Composer removes the original and every other package keeps working against the same version.
