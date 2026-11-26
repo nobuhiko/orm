@@ -1,5 +1,7 @@
 # Doctrine ORM 2.4.8 running clean on PHP 7.4, for EC-CUBE 3.0.x
 
+[![tests](https://github.com/umiushi-lab/orm/actions/workflows/tests.yml/badge.svg?branch=eccube3%2F2.4)](https://github.com/umiushi-lab/orm/actions/workflows/tests.yml) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/umiushi-lab/orm/badge)](https://scorecard.dev/viewer/?uri=github.com/umiushi-lab/orm)
+
 EC-CUBE 3.0.18 requires `doctrine/orm` `<2.5`. Doctrine ORM 2.4 was written before PHP 7.4 and raises notices and a compile warning there. This fork keeps 2.4.8 and fixes those places.
 
 ## Fixed
